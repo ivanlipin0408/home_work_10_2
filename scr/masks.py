@@ -1,6 +1,12 @@
 def get_mask_card_number(card_number: str) -> str:
     """Функция маскирует часть номера карты"""
     card_number_without_spaces = card_number.replace(" ", "")
+    if len(card_number_without_spaces) != 16:
+        raise ValueError("Неверная длина номера карты")
+
+    if card_number_without_spaces.isdigit() == False:
+        raise ValueError("Номер карты должен содержать только цифры")
+
     masked_card_number = (
         card_number_without_spaces[0:4]
         + " "
@@ -14,5 +20,8 @@ def get_mask_card_number(card_number: str) -> str:
 def get_mask_account(account_number: str) -> str:
     """Функция маскирует часть номера счета, выводит последние 4 цифры"""
     account_number_without_spaces = account_number.replace(" ", "")
+    if len(account_number_without_spaces) != 20:
+        raise ValueError("Неверная длина номера счета")
+
     masked_account_number = "**" + account_number_without_spaces[-4:]
     return masked_account_number
