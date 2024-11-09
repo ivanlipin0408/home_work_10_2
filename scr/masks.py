@@ -4,7 +4,7 @@ def get_mask_card_number(card_number: str) -> str:
     if len(card_number_without_spaces) != 16:
         raise ValueError("Неверная длина номера карты")
 
-    if card_number_without_spaces.isdigit() == False:
+    if not card_number_without_spaces.isdigit():
         raise ValueError("Номер карты должен содержать только цифры")
 
     masked_card_number = (

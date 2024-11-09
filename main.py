@@ -1,4 +1,6 @@
 from scr.processing import filter_by_state, sort_by_date
+from scr import widget
+
 
 print(
     filter_by_state(
@@ -42,3 +44,9 @@ print(
         "Возрастание",
     )
 )
+
+
+card_account_number: str = input("Введите номер вашего счета или карты   ")
+
+print(widget.mask_account_card(card_account_number))
+print(widget.get_date("2204-03-11T02:26:18.671407"))
