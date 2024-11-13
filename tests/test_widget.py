@@ -6,12 +6,12 @@ from scr.widget import get_date, mask_account_card
 def test_mask_account_card_wrong_input():
     assert mask_account_card("Карта 2552255") == "К сожалению, не удалось распознать вашу карту или счет"
 
-def test_get_date():
+def test_mask_account_card():
     assert mask_account_card("Visa Gold 5525 5551 4555 5222") == "Visa Gold 5525 55** **** 5222"
 
-def test_get_date():
-    assert get_date("2024-03-11T02:26:18.671407") == "11.03.2024"
-    assert get_date("2024-12-30T02:26:18.671407") == "30.12.2024"
+def test_get_date(date):
+    assert get_date("2024-03-11T02:26:18.671407") == date
+
 
 def test_get_date():
     with pytest.raises(ValueError):

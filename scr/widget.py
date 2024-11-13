@@ -52,7 +52,9 @@ def get_date(date_and_time: str) -> str:
         raise ValueError("Указана неверная дата")
     if int(date_and_time[5:7]) > 12:
         raise ValueError("Указана неверная дата")
-    if not date_and_time[0].isdigit() or not date_and_time[1].isdigit() or not date_and_time[2].isdigit() or not date_and_time[3].isdigit() or not date_and_time[5].isdigit() or not date_and_time[6].isdigit() or not date_and_time[8].isdigit() or not date_and_time[9].isdigit():
+    if (not date_and_time[0].isdigit() or not date_and_time[1].isdigit() or not date_and_time[2].isdigit() or not
+        date_and_time[3].isdigit() or not date_and_time[5].isdigit() or not date_and_time[6].isdigit() or not
+        date_and_time[8].isdigit() or not date_and_time[9].isdigit()):
         raise ValueError("Указан неверный формат даты")
     if not date_and_time[4] == "-" or not date_and_time[7] == "-":
         raise ValueError("Указан неверный формат даты")
@@ -60,5 +62,3 @@ def get_date(date_and_time: str) -> str:
 
     date = date_and_time[8:10] + "." + date_and_time[5:7] + "." + date_and_time[:4]
     return date
-
-# "2024-03-11T02:26:18.671407"

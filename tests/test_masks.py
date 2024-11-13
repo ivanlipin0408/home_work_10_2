@@ -1,10 +1,10 @@
 import pytest
 
-from scr.masks import get_mask_account, get_mask_car
+from scr.masks import get_mask_account, get_mask_card_number
 
 
-def test_mask_card_number():
-    assert get_mask_card_number("1250 8988 8888 5255") == "1250 89** **** 5255"
+def test_mask_card_number(numbers):
+    assert get_mask_card_number("1250 8988 8888 5255") == numbers
 
 
 def test_get_wrong_card_number():
@@ -15,8 +15,8 @@ def test_get_wrong_card_number():
         get_mask_card_number("123456789012345e")
 
 
-def test_mask_account():
-    assert get_mask_account("2554 52448974 6521 22 55") == "**2255"
+def test_mask_account(account):
+    assert get_mask_account("2554 52448974 6521 22 55") == account
 
 
 def test_get_wrong_account():
@@ -29,3 +29,4 @@ def test_get_wrong_account():
 
     with pytest.raises(ValueError):
         get_mask_account("123456789012345e")
+
