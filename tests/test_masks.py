@@ -1,5 +1,7 @@
 import pytest
-from scr.masks import get_mask_card_number, get_mask_account
+
+from scr.masks import get_mask_account, get_mask_car
+
 
 def test_mask_card_number():
     assert get_mask_card_number("1250 8988 8888 5255") == "1250 89** **** 5255"

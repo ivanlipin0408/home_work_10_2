@@ -1,5 +1,7 @@
 import pytest
+
 from scr.widget import get_date, mask_account_card
+
 
 def test_mask_account_card_wrong_input():
     assert mask_account_card("Карта 2552255") == "К сожалению, не удалось распознать вашу карту или счет"
@@ -30,6 +32,3 @@ def test_get_date_wrong_date():
         get_date("20w4-03-11T02:26:18.671407")
         get_date("20w4 03-11T02:26:18.671407")
         get_date(" 20w4-03-11T02:26:18.671407")
-
-
-# "2024-03-11T02:26:18.671407"
